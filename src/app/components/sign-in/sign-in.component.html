@@ -1,0 +1,55 @@
+<div class="card text-center"  id="sin">
+    <div class="card-header" style="background-color: #0d6efd;color: white;">
+        {{'Sign In' | translate}}
+    </div><br>
+    <div class="container">
+        <form #f="ngForm">
+            <div class="form-group">
+                <label for="email">{{'Email' | translate}}</label>
+                <sup style="color: rgb(239, 15, 15);">*</sup>
+                <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="email"
+                    style="width: 75%; margin: 0 auto;">
+            </div><br>
+  
+            <div class="form-group " style="text-align:center">
+                <label for="password">{{'Password' | translate}}</label>
+                <sup style="color: rgb(239, 15, 15);">*</sup>
+                <input type="password" class="form-control" id="password" name="password" required [(ngModel)]="password"
+                    style="width: 75%; margin: 0 auto;">
+                <br>
+                <button type="submit" class="btn btn-danger w-75 " (click)="login()" [disabled]="f.invalid" >{{'Login' | translate}}</button>
+            </div><br>
+  
+            <div class="d-flex justify-content-around">
+                <span class="form-check">
+                    <span class=""><input type="checkbox" class="form-check-input" id="remember"
+                            name="remember"></span>
+                    <label class="form-check-label" for="remember">{{'Remember Me' | translate}}</label>
+                </span>
+  
+                <span><a href="#" class="float-right">{{'Forgot Password?' | translate}}</a></span>
+            </div>
+            <div>
+                <hr class="position-relative">
+                <label for="" class="or" id="or">{{'Or' | translate}}</label>
+            </div><br>
+            <div class="d-grid gap-2 col-9 mx-auto">
+  
+                <div class="btn btn-primary d-flex justify-content-between w-100 " type="button"><i
+                        class="bi bi-facebook border-start-0 border-bottom-0 border-top-0 border pe-3"></i><span
+                        class="mx-auto"> {{'Login with Facebook' | translate}}</span></div>
+                <div class="d-flex justify-content-around">
+  
+  
+                    <label class="form-check-label" for="remember">{{'New User?' | translate}}</label>
+  
+  
+                    <span><a  class="float-right" routerLink="/SignUp">{{'Sign Up' | translate}}</a></span>
+                </div>
+                <br>
+            </div>
+        </form>
+    </div>
+  
+  </div>
+  

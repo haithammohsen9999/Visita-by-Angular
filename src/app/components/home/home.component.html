@@ -1,0 +1,655 @@
+<div class="h-100 w-100 d-flex align-items-center" [dir]="'dir' | translate">
+    <div class="searchAdoctor pt-5 position-relative  w-100">
+        <div class="container  py-5">
+            <h1 class="text-black-50 headd">{{'Better Healthcare for a Better Life' | translate}}</h1>
+            <h3 class="text-black-50 headd">{{'Book online or call' | translate}}<i
+                    class="fas fa-phone text-danger "></i> 16676</h3>
+        </div>
+
+        <div class=" h-50 d-flex align-items-center">
+            <div class=" search-nav  p-0 d-none d-md-block">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link w-50 active " id="nav-home-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                            aria-selected="true">
+                            <div class="booking d-flex justify-content-center w-100 align-items-center  active">
+                                <i class="far fa-calendar-plus me-3"></i>
+                                <div class="">
+                                    <h4 class="m-0">{{'Book a doctor' | translate}}</h4>
+                                    <span class="d-none d-md-block">{{'Examination or procedure' | translate}}</span>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="nav-link w-50" id="nav-profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                            aria-selected="false">
+                            <div class="telephone d-flex justify-content-center w-100  align-items-center">
+                                <i class="fas fa-headset me-3"></i>
+                                <div class="">
+                                    <h4 class="m-0">{{'Telehealth' | translate}}</h4>
+                                    <span class="d-none d-md-block">{{'Call consultation with doctor' |
+                                        translate}}</span>
+                                </div>
+                            </div>
+                        </button>
+
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                        tabindex="0">
+
+                        <div class="searchForAdoctor p-3 d-flex flex-column flex-md-row">
+                            <div class="dropdown">
+
+                                <button
+
+                                    class="speciality border p-2 d-flex justify-content-between align-items-center bg-light"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="d-flex flex-column" style="width: calc(100% - 10px);">
+                                        <span class="d-flex specia"><i class="fas fa-stethoscope "></i>{{'choose a speciality' | translate}}</span>
+                                        <select class="form-control" name="cat" id="cat" [(ngModel)]="selectedSpecialityID">
+                                          <option [ngValue]="null" style="color:#0070cd">{{'All Specialities' | translate}}</option>
+                                          <option *ngFor="let spe of speciality" style="color:#0070cd" [ngValue]="spe.Name">{{spe.Name}}</option>
+                                        </select>
+                                    </div>
+
+                                </button>
+
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="border p-2 d-flex justify-content-between align-items-center bg-light"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="d-flex flex-column" style="width: calc(100% - 10px);">
+                                        <span class="d-flex specia"><i class="bi bi-geo-alt me-2"></i>{{'Choose city' |
+                                            translate}}</span>
+                                        <select class=" form-control" name="cat" id="cat" [(ngModel)]="selectedCityID" >
+                                            <option value="0" style="color:#0070cd">{{'All Cities' | translate}}
+                                            </option>
+                                            <option *ngFor="let city of cities" [ngValue]="city.Name" style="color:#0070cd" >
+                                                {{city.Name}}</option>
+                                        </select>
+                                    </div>
+                                </button>
+
+                            </div>
+                            <div class="dropdown d-none d-md-block">
+                                <button class="border p-2 d-flex justify-content-between align-items-center bg-light"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="d-flex flex-column" style="width: calc(100% - 10px);">
+                                        <span class=" d-flex specia"><i class="fas fa-location-dot me-2"></i>{{'choose area' | translate}}</span>
+                                        <select class="form-control" name="cat">
+                                            <option value="0">{{'All Area' | translate}}</option>
+
+                                        </select>
+                                    </div>
+                                </button>
+
+                            </div>
+
+                            <div class="d-none d-md-block doctorName border ps-2 pt-2">
+                                <h5 class="text-black-50">{{'or search by name' | translate}}</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="me-2 fas fa-user-doctor"></i>
+                                    <input type="text" [(ngModel)]="doctorName"
+                                        placeholder="{{'Doctor name' | translate}}">
+                                </div>
+                            </div>
+
+                            <div class="searchh text-light fw-bold fs-5 text-center d-flex justify-content-center align-items-center"
+                              (click)="SearchDoctor()">
+                                <i class="bi bi-search me-2"></i>
+                                <span>{{'Search' | translate}}</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                        tabindex="0">
+                        <div class="searchForAdoctor p-3 d-flex flex-column flex-md-row justify-content-center">
+                            <div class="dropdown">
+                                <button
+                                    class="speciality border p-2 d-flex justify-content-between align-items-center bg-light"
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="d-flex flex-column" style="width: calc(100% - 10px);">
+                                        <span class="d-flex specia"><i class="fas fa-stethoscope me-2"></i> {{'choose a speciality' | translate}}</span>
+                                        <select class="form-control" name="cat" id="cat"
+                                            [(ngModel)]="selectedSpecialityID">
+                                            <option value="0" style="color:#0070cd">{{'All Specialities' | translate}}
+                                            </option>
+                                            <option *ngFor="let spe of speciality" value={{spe.Name}}
+                                                style="color:#0070cd">{{spe.Name}}</option>
+                                        </select>
+
+                                    </div>
+
+                                </button>
+
+                            </div>
+
+                            <div (click)="SearchDoctor()"
+                                class="searchh text-light fw-bold fs-5 text-center d-flex justify-content-center align-items-center">
+                                <i class="bi bi-search me-2"></i>
+                                <span>{{'search' | translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-fluid search-nav-mobile mt-5 p-0 d-md-none px-2">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link  active " id="nav-clinck-tab" style="width:50%" data-bs-toggle="tab"
+                            data-bs-target="#nav-clinck" type="button" role="tab" aria-controls="nav-clinck"
+                            aria-selected="true">
+                            <div class="booking d-flex justify-content-center  align-items-center flex-column active">
+                                <i class="far fa-calendar-plus me-3"></i>
+                                <div>
+
+                                    <h5 class="m-0">{{'Clinic Visit' | translate}}</h5>
+
+                                </div>
+                            </div>
+                        </button>
+
+                        <button class="nav-link" id="nav-doctor-tab" style="width:50%" data-bs-toggle="tab"
+                            data-bs-target="#nav-doctor" type="button" role="tab" aria-controls="nav-profile"
+                            aria-selected="false">
+                            <div class="telephone d-flex justify-content-center   align-items-center flex-column">
+                                <i class="bi bi-telephone"></i>
+                                <div>
+
+
+                                    <h5 class="m-0 text-center">{{'Doctor Call' | translate}}</h5>
+
+                                </div>
+                            </div>
+                        </button>
+
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-clinck" role="tabpanel"
+                        aria-labelledby="nav-clinck-tab" tabindex="0">
+
+
+                        <div class="my-search">
+                            <button class="btn btn-search w-100" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">{{'Search for specialty, doctor or hospital' | translate}}</button>
+
+                            <div class="offcanvas offcanvas-top h-100" data-bs-scroll="true" data-bs-backdrop="false"
+                                tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                <div class="offcanvas-header">
+                                    <button type="button" class="btn-close text-white" style='width: 6%;'
+                                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    <h5 class="offcanvas-title text-center " style='width: 94%;'
+                                        id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
+
+                                </div>
+                                <div class="offcanvas-body">
+                                    <input type="text" class="form-control" placeholder="search">
+                                    <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                                        <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id"
+                                            style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                            <div class="">
+
+                                <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false"
+                                    tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                    <div class="offcanvas-header">
+                                        <button type="button" class="btn-close text-white" style='width: 6%;'
+                                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <h5 class="offcanvas-title text-center " style='width: 94%;'
+                                            id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
+
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                                            <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id"
+                                                style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn Brwose w-100" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">{{'Brwose Doctor' | translate}}</button>
+                            <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false"
+                                tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                <div class="offcanvas-header">
+                                    <button type="button" class="btn-close text-white" style='width: 6%;'
+                                        data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    <h5 class="offcanvas-title text-center " style='width: 94%;'
+                                        id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
+
+                                </div>
+                                <div class="offcanvas-body">
+                                    <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                                        <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id"
+                                            style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                            <p class="text-center my-2">{{'Or call' | translate}} <span class="call-num fw-bolder ">16676</span></p>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-order" role="tabpanel" aria-labelledby="nav-order-tab"
+                        tabindex="0">
+                        <div>
+                            <input type="text" placeholder=" Search of aproduct" class="search-in-mobile">
+                            <p class="text-center my-2">{{'Or call' | translate}} <span class="call-num fw-bolder ">16676</span></p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-doctor" role="tabpanel" aria-labelledby="nav-doctor-tab"
+                        tabindex="0">
+                        <div class="tab-pane fade show active" id="nav-clinck" role="tabpanel"
+                            aria-labelledby="nav-clinck-tab" tabindex="0">
+
+
+                            <div class="my-search">
+
+                                <div class="">
+                                    <button class="btn btn-search w-100" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">{{'Search for specialty, doctor or hospital' | translate}}</button>
+
+                                    <div class="offcanvas offcanvas-top" data-bs-scroll="true" data-bs-backdrop="false"
+                                        tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                        <div class="offcanvas-header">
+                                            <button type="button" class="btn-close text-white" style='width: 6%;'
+                                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                            <h5 class="offcanvas-title text-center " style='width: 94%;'
+                                                id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                                                <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id"
+                                                    style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn Brwose w-100" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offbrwose" aria-controls="offcanvasScrolling">{{'Brwose Doctor' | translate}}</button>
+                                <div class="offcanvas offcanvas-top h-100" data-bs-scroll="true"
+                                    data-bs-backdrop="false" tabindex="-1" id="offbrwose"
+                                    aria-labelledby="offcanvasScrollingLabel">
+                                    <div class="offcanvas-header">
+                                        <button type="button" class="btn-close text-white" style='width: 6%;'
+                                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <h5 class="offcanvas-title text-center " style='width: 94%;'
+                                            id="offcanvasScrollingLabel">{{'Search' | translate}}</h5>
+
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="list-unstyled p-2 rounded " style="border:1px solid #0070cd ">
+                                            <li class="my-2 " *ngFor="let spe of speciality" [value]="spe.id"
+                                                style="color:#0070cd; cursor: pointer;">{{spe.Name}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <p class="text-center my-2">{{'Or call' | translate}} <span class="call-num fw-bolder ">16676</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- New services -->
+<section class="upper-footer py-5" [dir]="'dir' | translate">
+    <div class="container new">
+        <h2>{{'New services for better healthcare' | translate}}</h2>
+        <div class="new-content row align-items-center mb-5">
+            <div class="col-lg-2  col-4 py-2">
+                <img src="assets/qnaDoctor.webp" alt="">
+            </div>
+            <div class="col-lg-10 col-8 row">
+                <div class="col-lg-8 col-12">
+                    <h3>{{'Have a Medical Question?' | translate}}</h3>
+                    <p>{{'Submit your medical question and receive an answer from a specialized doctor' | translate}}
+                    </p>
+
+                </div>
+                <div class="col-lg-4 col-12">
+                    <button routerLink="/Question" class="ask">{{'Ask now' | translate}}</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="pharm row p-lg-5 mb-5" [dir]="'ltr' | translate">
+            <div class="w-100 d-flex">
+                <div class="pharm-img">
+                    <img  src="assets/Pharmacy.webp" alt="" height="54" width="54">
+                </div>
+                <div class="ps-2">
+                    <h3>{{'Pharmacy' | translate}}</h3>
+                    <p>{{"Get your medicine and all your pharmacy needs." | translate}}</p>
+                </div>
+            </div>
+            <button class="place">{{'Place order' | translate}}</button>
+
+
+        </div> -->
+
+        <div class="new-two row">
+            <!-- <div class="col-lg-6">
+                <div class="tele row mb-5">
+                    <div class="col-4">
+                        <img src="assets/desktop.jfif" alt="">
+                    </div>
+                    <div class="col-8 ">
+                        <div class=" tele-content d-block">
+                            <h3>{{'Teleconsultation' | translate}}</h3>
+                            <p>{{'Schedule a voice or video call with a specialized doctor.' | translate}}</p>
+                            <a>{{'Book a Call' | translate}}<i class="fas fa-angle-right text-danger"></i></a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> -->
+            <div class="col-lg-12">
+                <div class="tele row mb-5">
+                    <div class="col-4">
+                        <img style="width: 70%;" src="assets/mobile.jfif" alt="">
+                    </div>
+                    <div class="col-8 p-3">
+                        <div class="tele-content d-block">
+                            <h3>{{'Home Visit' | translate}}</h3>
+                            <p>{{'Choose the specialty, and the doctor will visit you at home.' | translate}}</p>
+                            <a routerLink="/homevisit">{{'Book a visit' | translate}}<i class="fas fa-angle-right text-danger"></i></a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Top Offer -->
+<section class="top-offer p-5 " [dir]="'dir' | translate">
+    <div class="container ">
+        <div class="top-offer-head d-flex justify-content-between">
+            <h2>{{'Choose from top offers' | translate}}</h2>
+            <a routerLink="/Offers">{{'All Offers' | translate}} <i class="fas fa-angle-right text-danger"></i></a>
+        </div>
+
+        <div>
+            <div id="slider-one" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" >
+
+                        <div class="row ">
+                            <div class="col-lg-3 col-6" *ngFor="let off of offerSlide1 let i=index"  >
+                                <div class="p-1 text-start position-relative" (click)="goToDetails(off.id)">
+                                    <span class="off">{{off.Discount}}% {{'OFF' | translate }}</span>
+                                    <img src={{off.ImgUrl}} width="" alt="">
+                                    <h4>{{off.SessionName | translate}}</h4>
+                                    <span class="old-price">{{off.PriceBefore}} {{'EGP' | translate }}</span>
+                                    <span class="offer-price"> {{off.Price}} {{'EGP' | translate}}</span>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item ">
+
+                        <div class="row ">
+                            <div class="col-lg-3 col-6" *ngFor="let off2 of offerSlide2 let i=index">
+                                <div class="p-1 text-start position-relative" (click)="goToDetails(off2.id)">
+                                    <span class="off">{{off2.Discount}}% {{'OFF' | translate }}</span>
+                                    <img src={{off2.ImgUrl}} width="" alt="">
+                                    <h4>{{off2.SessionName | translate}}</h4>
+                                    <span class="old-price">{{off2.Price}} {{'EGP' | translate }}</span>
+                                    <span class="offer-price"> {{(off2.Price* (off2.Discount)/100)}} {{'EGP' |
+                                        translate}}</span>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#slider-one" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#slider-one" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Book from Top -->
+<section class="book-from-top p-5" [dir]="'dir' | translate">
+    <div class="container">
+        <h2>{{'Book from top specialties' | translate}}</h2>
+        <div id="slider-two" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row ">
+                      <div class="col-lg-3 col-6 mb-3" *ngFor="let spe1 of specialityslide1 let i=index">
+                        <div class="text-start position-relative book-slide" (click)="onSpecialityClick(spe1.Name)">
+                            <img src={{spe1.imgUrl}} width="" alt="">
+                            <h4>{{spe1.Name | translate}} </h4>
+                        </div>
+                    </div>
+
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="row ">
+                        <div class="col-lg-3 col-6 mb-3" *ngFor="let spe2 of specialityslide2 let i=index">
+                            <div class=" text-start position-relative book-slide"  (click)="onSpecialityClick(spe2.Name)">
+
+                                <img src={{spe2.imgUrl}} width="" alt="">
+                                <h4>{{spe2.Name | translate}} </h4>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#slider-two" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#slider-two" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-- dawnload -->
+<section class="dawnload-veseeta p-lg-5" [dir]="'dir' | translate">
+    <div class="container">
+        <div class="row top-dawnload">
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="row">
+                    <div class=" col-md-12 col-2">
+                        <img src="assets/medical-care-icon.svg" alt="">
+                    </div>
+                    <div class="col-md-12 col-10">
+                        <h3>{{'All your healthcare needs' | translate}}</h3>
+                        <p>{{'Search and book a clinic visit, home visit, or a teleconsultation. Order your medicine and book a service or operation.' | translate}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="row">
+                    <div class=" col-md-12 col-2">
+                        <img src="assets/doctor-icon.svg" alt="">
+                    </div>
+                    <div class="col-md-12 col-10">
+                        <h3>{{'Verified patient reviews' | translate}}</h3>
+                        <p>{{'Doctor ratings are from patients who booked and visited the doctor through Vezeeta.' | translate}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="row">
+                    <div class="col-md-12 col-2">
+                        <img src="assets/booking-icon.svg" alt="">
+                    </div>
+                    <div class="col-md-12 col-10">
+                        <h3>{{'Your booking is confirmed' | translate}}</h3>
+                        <p>{{'Your booking is automatically confirmed, as the doctor specifies his working hours and is notified of the booking details.' | translate}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="row">
+                    <div class="col-md-12 col-2">
+                        <img src="assets/security-icon.svg" alt="">
+                    </div>
+                    <div class="col-md-12 col-10">
+                        <h3>{{'Book for free, and pay in the clinic' | translate}}</h3>
+                        <p>{{'The consultation fees stated on Vezeeta are the actual doctors fees with no extra charges.' | translate}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row contain-dawnload-icon">
+            <div class="col-lg-6  p-lg-5">
+                <h1>{{'Download Vezeeta Application' | translate}}</h1>
+                <p>{{'Search, compare and book doctor consultations with ease. Order your medicines & get them deilvered within 60 minutes. Track your steps count & earn points on hitting the daily goal' | translate}}</p>
+                <div class="row ">
+                    <div class="col-4  p-3">
+                        <a href="" class="row align-items-center p-2 dawonload-icon">
+                            <div class="col-4">
+                                <img src="assets/apple-logo.svg" alt="">
+
+                            </div>
+                            <div class="col-8">
+                                <span>App Store</span>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4 p-3">
+                        <a href="" class=" row align-items-center p-2 dawonload-icon">
+                            <div class="col-4">
+                                <img src="assets/google-play-logo.svg" alt="">
+
+                            </div>
+                            <div class="col-8">
+                                <span>Google Play</span>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" col-4 p-3">
+                        <a href="" class=" row align-items-center p-2 dawonload-icon">
+                            <div class="col-4">
+                                <img src="assets/AppGallery.svg" alt="">
+
+                            </div>
+                            <div class="col-8">
+                                <span>App Gallery</span>
+
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-lg-5 offset-lg-1 img-dawn p-5 pb-0">
+                <img src="assets/dowanloadApp-eg-en.jfif" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Upper footer -->
+
+<section class="upper-footer py-5" [dir]="'dir' | translate">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>{{'Choose and book from top specialties' | translate}}</h3>
+                <a href="">{{'Dentist' | translate}}</a>
+                <a href="">{{'Psychiatrist' | translate}}</a>
+                <a href="">{{'Pediatrician' | translate}}</a>
+                <a href="">{{'Neurologist' | translate}}</a>
+                <a href="">{{'Orthopedist' | translate}}</a>
+                <a href="">{{'Gynecologist' | translate}}</a>
+                <a href="">{{'ENT Doctor' | translate}}</a>
+                <a href="">{{'Cardiologist' | translate}}</a>
+
+            </div>
+            <div class="col-lg-6">
+                <h3>{{'Choose and book from top cities' | translate}}</h3>
+                <a href="">{{'Giza' | translate}}</a>
+                <a href="">{{'Alexandria' | translate}}</a>
+                <a href="">{{'North Coast' | translate}} Coast</a>
+                <a href="">{{'Qalyubia' | translate}}</a>
+                <a href="">{{'Gharbia' | translate}}</a>
+                <a href="">{{'Menoufia' | translate}}</a>
+                <a href="">{{'Fayoum' | translate}}</a>
+                <a href="">{{'El-Dakahlia' | translate}}</a>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>

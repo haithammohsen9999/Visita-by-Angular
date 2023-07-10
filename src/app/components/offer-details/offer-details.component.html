@@ -1,0 +1,66 @@
+<div class="container" [dir]="'dir' | translate">
+    <div class="row">
+        <div class="col-12 col-md-7">
+            <br>
+            <div>
+                <img [src]="offersDetails.ImgUrl" class="card-img-top" alt="...">
+            </div>
+            <br>
+            <div class="d-flex">
+                <span><img [src]="offersDetails.DoctorImg" class="doctorimg" alt="..."></span>&nbsp;
+                <div style="padding-top: 10px; padding-left: 5px;">
+                    <h6 class="docname">{{offersDetails.DoctorName | translate}}</h6>
+                    <p class="doclocation">{{offersDetails.Address | translate}}</p>
+                </div>
+            </div><br>
+            <div>
+                <h3>{{'Description' | translate}}</h3>
+                <p>{{'Terms & Conditions:' | translate}}</p>
+                <p>- {{'To get the offer please book an appointment from the schedule above' | translate}}</p>
+                <p>- {{'Examination fees are only paid in case of not doing the service' | translate}}</p>
+            </div>
+            <div>
+                <h3>{{'For your info' | translate}}</h3>
+                <p>{{offersDetails.Info | translate}}</p>
+
+            </div>
+
+        </div>
+        <div class="d-none d-md-block col-1 p-3">
+            <div class="vertical-line "></div>
+        </div>
+
+        <hr class="d-md-none">
+
+        <div class="col-12 col-md-4 p-3">
+
+            <div class="container">
+                <div class="sessionname">{{offersDetails.SessionName | translate}}</div>
+                <div class="sessionnum">{{offersDetails.Num | translate}}</div>
+
+                <div class="pricecontainer">
+                    <p class="priceinfo">{{offersDetails.PriceInfo | translate}}</p>
+                    <div class="pricebefore">
+                        {{offersDetails.PriceBefore}} {{'EGP' | translate}}
+                    </div>
+                    <span class="price">
+                        {{offersDetails.Price}} {{'EGP' | translate}}
+                    </span>
+                    <span class="save">{{'Save' | translate}} {{offersDetails.Save | translate}} {{'EGP' | translate}}</span>
+                </div>
+                <hr>
+                <div class="p-2 justify-content-center">
+                    <span class="icons"><img src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/25556/_next/static/images/group-16@3x.png" class="offericon" alt=""><span
+                            class="iconfont"> {{offersDetails.Booked}} {{'Bookings' | translate}} </span></span>
+                    <span class="icons"><img src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/25556/_next/static/images/view@3x.png" class="offericon" alt=""><span
+                            class="iconfont"> {{offersDetails.Views}} {{'Views' | translate}} </span></span>
+                    <span class="icons"><img src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/25556/_next/static/images/clock-circular-outline@3x.png" class="offericon" alt=""><span
+                            class="iconfont"> {{offersDetails.Time | translate}} </span></span>
+
+                </div>
+                <hr>
+                <div id="payments"></div>
+            </div>
+        </div>
+    </div>
+</div>

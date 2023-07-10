@@ -1,0 +1,244 @@
+<style>
+  @media (max-width:520px) {
+  #sp span{
+    text-align: center;
+    display: block;
+  }
+}
+#sp span{
+    font-size: x-small;
+}
+
+#btn1 span{
+    color: #0070cd;
+    display: block;
+    text-align: center;
+
+}
+#btn1 span:hover{
+    background-color: #0070cd;
+    color: #eef0f2;
+    cursor: pointer;
+}
+#btn1{
+    color: #eef0f2;
+    display: flex;
+    justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   border: 1px solid;
+   background-color:white;
+
+}
+#res1:hover{
+background-color: rgba(203, 202, 202, 0.198) !important;
+cursor: pointer;
+}
+#filter{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+
+}
+.cut-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 350px;
+  height: 1.5em;
+  white-space: nowrap;
+  font-size: 15px;
+
+}
+</style>
+<section class="container bg-light">
+
+  <div class="row" >
+      <div id="filterDiv" class="col-lg-2 col-sm-12">
+         <div id="filter" class="btn bg-primary text-white p-2"><i class="fa fa-solid fa fa-filter"></i> &nbsp; Filters</div>
+          <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOn">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOn" aria-expanded="true" aria-controls="collapseOn">
+                      <i class="fa fa-solid fa fa-graduation-cap"></i>&nbsp; Title
+                  </button>
+                </h2>
+                <div id="collapseOn" class="accordion-collapse collapse show" aria-labelledby="headingOn" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="flexCheckDefault" [(ngModel)]="TitleProfessor" (change)="onTitleChecked('Professor')">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Professor
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="flexCheckChecked" [(ngModel)]="TitleLecturer" (change)="onTitleChecked('Lecturer')">
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Lecturer
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="flexCheckChecked" [(ngModel)]="TitleConsultant" (change)="onTitleChecked('Consultant')">
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Consultant
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="flexCheckChecked" [(ngModel)]="TitleSpecialist" (change)="onTitleChecked('Specialist')">
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Specialist
+                      </label>
+                    </div>
+
+
+                       </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingO">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseO" aria-expanded="true" aria-controls="collapseO">
+                    <i class="fa fa-solid fa fa-venus-mars"></i>&nbsp; Gender
+                  </button>
+                </h2>
+                <div id="collapseO" class="accordion-collapse collapse show" aria-labelledby="headingO" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="Female" [(ngModel)]="genderFemale" (change)="onCheckboxChange('female')">
+                      <label class="form-check-label" for="femaleCheckbox">
+                        Female
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="Male" id="maleCheckbox" [(ngModel)]="genderMale" (change)="onCheckboxChange('male')">
+                      <label class="form-check-label" for="maleCheckbox">
+                        Male
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne2">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+                      <i class="fa fa-solid fa fa-money-bill-wave"></i>&nbsp;   Examination Fee
+
+                  </button>
+                </h2>
+                <div id="collapseOne2" class="accordion-collapse collapse show" aria-labelledby="headingOne2" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" [(ngModel)]="anyPriceFilter" (change)="checkAnyPriceFilter()">
+                      <label class="form-check-label">
+                        Any
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" [(ngModel)]="priceFilterLess300" (change)="checkPriceFilters('less300')">
+                      <label class="form-check-label">
+                        Less than 300
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" [(ngModel)]="priceFilterFrom100to200" (change)="checkPriceFilters('from100to200')">
+                      <label class="form-check-label">
+                        From 100 to 200
+                      </label>
+                    </div>
+
+                       </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="fa false" aria-controls="collapseTwo">
+                      <i class="fa fa-solid fa fa-stethoscope"></i> &nbsp;    Entity
+
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" [(ngModel)]="EntityHospital" (change)="checkEntities('hospital')">
+                      <label class="form-check-label" for="flexCheckDefa fault">
+                        Hospital
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" [(ngModel)]="EntityClinic" (change)="checkEntities('clinic')">
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Clinic
+                      </label>
+                    </div>
+
+                         </div>
+                </div>
+              </div>
+
+            </div>
+      </div>
+  <section  class="col-lg-10 col-sm-12">
+    <div id="res1" class="row bg-white rounded-3 m-3 p-3 d-flex" *ngFor="let doctor of filterDoctors(doctors)  | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+      <div class="col-lg-3 col-sm-12"> <img [src]="doctor.ImgUrl" style="border-radius:50%"></div>
+     <div class="col-lg-5 col-sm-12 ">
+     <h3 style="color: #0070cd;"> <span style="font-size: small;">{{doctor.Name}}</span></h3>
+
+       <h5 style="color: gray;" class="cut-text">{{doctor.About}}</h5>
+       <div class="mb-2">
+       <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
+       <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
+       <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
+       <i class="fa fa-solid fa fa-star" style="color: gold;"></i>
+       </div>
+
+       <div  id="sp" class="BadgesContainer mb-2 ">
+       <span class="rounded-5 bg-primary text-white p-2 m-2" ><i class="fa fa-solid fa fa-stethoscope"></i>&nbsp; Hygiene</span>
+       <span class="rounded-5 bg-primary text-white p-2 m-2"><i class="fa fa-solid fa fa-ear-listen"></i>&nbsp; Good Listener</span>
+       <span class="rounded-5 bg-primary text-white p-2 m-2"> <i class="fa fa-solid fa fa-comment-dots"></i>&nbsp; Informative</span>
+      </div>
+      <div class="iconDiv">
+      <div ><i class="fa fa-solid fa fa-stethoscope"></i>&nbsp; {{doctor.Speciality}}</div>
+      <div><i class="fa fa-solid fa-compass"></i>&nbsp; {{doctor.Location}}</div>
+      <div><i class="fa fa-solid fa fa-money-bill-wave"></i>&nbsp; Fees : {{doctor.ExaminationFees}} EGP</div>
+      <div><i class="fa fa-solid fa fa-clock"></i>&nbsp; Waiting Time : 23 Minutes</div>
+      <div><i class="fa fa-solid fa fa-phone"></i>&nbsp; 16676 - Cost of regular call</div>
+      </div>
+
+  </div>
+  <!-- <div class="col-lg-4" >
+    <div>
+      <dl-date-time-picker
+      maxView="year"
+      minView="hour"
+      startView="day"
+      returnFormat="iso8601"
+      [(ngModel)]='dateSelected'
+      (onChange)="updateAppointment(doctor, doctor['dateSelected'])"
+    >
+    </dl-date-time-picker>
+
+
+    </div>
+
+    <div class="btn btn-danger " style="width: 100%;" (click)="bookAppointments(doctor?.Name||'',doctor?.ImgUrl||'',doctor?.Speciality||'',dateSelected,doctor?.ExaminationFees?.toString()||'',doctor?.Location||'',doctor?.Phone?.toString()||'',doctor.id)">Book</div>
+
+  </div> -->
+
+
+  </div>
+
+
+
+
+
+  </section>
+
+
+  </div>
+  <div class="text-center">
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>
+   </section>
+

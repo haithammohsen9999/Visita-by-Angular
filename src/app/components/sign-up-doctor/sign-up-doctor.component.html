@@ -1,0 +1,92 @@
+<div class="container-md p-2" [dir]="'dir' | translate">
+    <h3 class="text-black-50">{{'Enter your personal info' | translate}}</h3>
+    <p class="text-black-50">{{'This is your personal account information, you will be prompted next for your clinic/hospital information.' | translate}}</p>
+  </div>
+  <form  action="" class="container-md m-auto" [dir]="'dir' | translate" >
+    <div class="col-12 row g-3">
+      <div class="col-md-6 d-flex align-items-center">
+        <input type="text" name="Title" class="form-control rounded-0" id="Title" placeholder="{{'Title' | translate}}" [(ngModel)]="Title">
+      </div>
+      <div class="col-md-6">
+        <input type="text" name="Name" class="form-control rounded-0" id="Name" placeholder="{{'Name' | translate}}" [(ngModel)]="Name">
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <select id="inputState" class="form-select speciality rounded-0" name="gender" [(ngModel)]="gender">
+          <option disabled selected>{{'Gender' | translate}}</option>
+          <option>{{'Male' | translate}}</option>
+          <option>{{'Female' | translate}}</option>
+        </select>
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <select id="inputState" class="form-select speciality rounded-0" name="entity" [(ngModel)]="entity">
+          <option disabled selected>{{'Entity' | translate}}</option>
+          <option>{{'Hospital' | translate}}</option>
+          <option>{{'Clinic' | translate}}</option>
+          <option>{{'Center' | translate}}</option>
+        </select>
+      </div>
+      <div class="col-12 d-flex align-items-center">
+        <select id="inputState" class="form-select speciality rounded-0" name="speciality" [(ngModel)]="speciality">
+          <option disabled selected>{{'Speciality' | translate}}</option>
+          <option>{{'Dermatology' | translate}}</option>
+          <option>{{'Dentistry' | translate}}</option>
+          <option>{{'Psychiatry' | translate}}</option>
+          <option>{{'Pediatrics' | translate}}</option>
+          <option>{{'Neurology' | translate}}</option>
+          <option>{{'Orthopedics' | translate}}</option>
+          <option>{{'Gynaecology' | translate}}</option>
+          <option>{{'Ear, Nose and Throat' | translate}}</option>
+          <option>{{'Cardiology' | translate}}</option>
+          <option>{{'Diabetes and Endocrinology' | translate}}</option>
+          <option>{{'Dietitian and Nutrition' | translate}}</option>
+        </select>
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <select id="inputState" class="form-select speciality rounded-0" name="city" [(ngModel)]="city">
+          <option disabled selected>{{'City' | translate}}</option>
+          <option>{{'Cairo' | translate}}</option>
+          <option>{{'Giza' | translate}}</option>
+          <option>{{'Alexandria' | translate}}</option>
+          <option>{{'Qalyubia' | translate}}</option>
+          <option>{{'Gharbia' | translate}}</option>
+          <option>{{'Menoufia' | translate}}</option>
+          <option>{{'Fayoum' | translate}}</option>
+          <option>{{'El-Dakahlia' | translate}}</option>
+          <option>{{'Sharqia' | translate}}</option>
+          <option>{{'Aswan' | translate}}</option>
+          <option>{{'Qena' | translate}}</option>
+          <option>{{'Luxor' | translate}}</option>
+          <option>{{'Sohag' | translate}}</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control rounded-0" id="Street" placeholder="{{'Street' | translate}}" name="Street" [(ngModel)]="street">
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control rounded-0" id="Buildingnum" placeholder="{{'Building' | translate}}" name="Buildingnum" [(ngModel)]="building">
+      </div>
+      <div class="col-md-6">
+        <input type="tel" class="form-control rounded-0" id="Clinicnum" placeholder="{{'Clinic / Hospital / Center Number' | translate}}" name="Clinicnum" [(ngModel)]="clinicNumber">
+      </div>
+      <div class="col-12 d-flex align-items-center">
+        <input type="text" class="form-control rounded-0" id="inputAddress" placeholder="{{'Email' | translate}}" name="inputAddress" [(ngModel)]="email">
+      </div>
+      <div class="col-12 d-flex align-items-center">
+        <input type="password" class="form-control rounded-0" id="inputAddress" placeholder="{{'Password' | translate}}" name="inputAddress" [(ngModel)]="password">
+      </div>
+      <div class="col-12 d-flex align-items-center">
+        <input type="number" class="form-control rounded-0" id="inputExamFee" placeholder="{{'Examination Fee' | translate}}"  name="inputExamFee" [(ngModel)]="examFee">
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="{{'About You' | translate}}" name="exampleFormControlTextarea1" [(ngModel)]="about"></textarea>
+      </div>
+      <div class="col-12 d-flex align-items-center">
+        <input type="text" class="form-control rounded-0" id="imge" placeholder="{{'Image URL' | translate}}" name="imge" [(ngModel)]="imageUrl">
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <button (click)="AddDoctor()"  class="btn btn-primary w-25"  >{{'Sign up' | translate}} </button>
+      </div>
+
+            <p class="text-center mt-2">{{'have already an account?' | translate}} <a routerLink="/SignInDoctor">{{'login' | translate}}</a></p>
+        </div>
+  </form>

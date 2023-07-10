@@ -1,0 +1,36 @@
+$mainColor:#0070cd;
+
+.form-control{
+    border: none;
+    border-bottom: black 2px solid;
+}
+.form-control:focus{
+    outline: none;
+    box-shadow: none !important;
+    border-bottom: $mainColor 2px solid !important;
+}
+.speciality{
+    border: none !important;
+    border-bottom: black 2px solid !important;
+}
+.speciality:focus{
+    outline: none;
+    box-shadow: none !important;
+    border-bottom: $mainColor 2px solid !important;
+}
+.inputFile{
+    height: 8rem;
+    width: 8rem;
+    background-color: #e7e7e7;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.fa-camera-retro{
+    color: $mainColor;
+    position: relative;
+}
+.fa-plus{
+    transform: translateX(1rem);
+    font-size: 1rem;
+    color: $mainColor;
+}

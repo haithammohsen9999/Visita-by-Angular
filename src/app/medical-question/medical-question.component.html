@@ -1,0 +1,71 @@
+<div class="card"  id="sin" [dir]="'dir' | translate">
+    
+    <div class="container">
+      <form >
+
+            <div class="mt-5">
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="speciality" name="speciality">
+                  <option value="">{{'-- Select Medical Speciality --' | translate}}</option>
+                  <option value="Dermatology">{{'Dermatology' | translate}}</option>
+                  <option value="Cardiology">{{'Cardiology' | translate}}</option>
+                  <option value="Endocrinology">{{'Endocrinology' | translate}}</option>
+                  <option value="Gastroenterology">{{'Gastroenterology' | translate}}</option>
+                  <option value="Neurology">{{'Neurology' | translate}}</option>
+                  <option value="Oncology">{{'Oncology' | translate}}</option>
+                  <option value="Orthopedics">{{'Orthopedics' | translate}}</option>
+                  <option value="Pediatrics">{{'Pediatrics' | translate}}</option>
+                  <option value="Psychiatry">{{'Psychiatry' | translate}}</option>
+                  <option value="Urology">{{'Urology' | translate}}</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="text">{{'Your question' | translate}}</label>
+                <span class="ms-3">{{'(Your identity will be anonymous)' | translate}}</span>
+                <input class="form-control" type="text" placeholder="{{'Example: What are the causes of acne?' | translate}}" aria-label="default input example" [(ngModel)]="question" name="question">
+
+            </div><br>
+  
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">{{'0/50 characters' | translate}}</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="details" [(ngModel)]="details"></textarea>
+              </div>
+  
+              <div class="d-flex "><br>
+                <label for="for">{{'The question is for:' | translate}}</label>
+                <div class="form-check">
+                  <input type="radio" class="btn-check" name="for" id="for1" autocomplete="off" value="me" checked [(ngModel)]="forr" >
+                  <label class="btn btn-group" for="for1">{{'For Myself' | translate}}</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" class="btn-check" name="for" id="for2" autocomplete="off" value="other" [(ngModel)]="forr" >
+                  <label class="btn btn-group" for="for2">{{'For another person' | translate}}</label>
+                </div>
+              </div>
+              
+              <div class="d-flex">
+                <label for="for">{{'Select gender:' | translate}}</label>
+                <div class="form-check">
+                  <input type="radio" class="btn-check" name="gender" id="gender1" autocomplete="off" value="Male" checked [(ngModel)]="gender" >
+                  <label class="btn btn-group" for="gender1">{{'Male' | translate}}</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" class="btn-check" name="gender" id="gender2" autocomplete="off" value="Female" [(ngModel)]="gender" >
+                  <label class="btn btn-group" for="gender2">{{'Female' | translate}}</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="text">{{'How old are you?' | translate}}</label>
+                <span class="ms-3">{{'(years old)' | translate}}</span>
+                <input class="form-control" type="number" placeholder="{{'Add age' | translate}}" aria-label="default input example" [(ngModel)]="age" name="age">
+
+            </div><br>
+            <div class="d-grid gap-2">
+                <button (click)="submitQuestion(question.valueOf(), speciality.valueOf(), age.valueOf(), gender.valueOf(), details.valueOf(), forr.valueOf() )" class="btn btn-primary" type="button">{{'Submit' | translate}}</button>
+              </div>
+              <div><p>{{'Text answers on Vezeeta are not intended for individual diagnosis, treatment or prescription. For these, please consult a doctor.' | translate}}</p></div>
+        </form>
+    </div>
+  
+  </div>
+  

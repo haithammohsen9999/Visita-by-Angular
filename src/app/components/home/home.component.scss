@@ -1,0 +1,622 @@
+
+.searchAdoctor{
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    animation-name: changeBachImg;
+     animation-duration: 4s;
+     animation-timing-function: ease-in-out;
+     animation-iteration-count: infinite;
+}
+.searchForAdoctor span{
+    color: #0070cd;
+    font-size: 14px;
+}
+
+@keyframes changeBachImg {
+    0%   {background-image:url('../../../assets/thumbbig-695586.webp');}
+    35%  {background-image:url('../../../assets/prescription-success-featured.jpg');}
+    70%  {background-image:url('../../../assets/Methadone-Program-Toronto.webp');}
+    100% {background-image:url('../../../assets/thumbbig-695586.webp');}
+
+  }
+
+  @media screen and (max-width:600px){
+    .searchAdoctor{
+        height: unset;
+        background-image: unset;
+        animation-name: unset;
+       
+    }
+    
+  }
+.search-nav{
+background-color: white;
+border-radius: 22px;
+width: 80%;
+margin: auto;
+
+}
+.search-nav button {
+    background-color: white !important;
+}
+@media screen and (max-width: 976px) {
+  
+    .search-nav{
+    
+        width: 95%;
+      
+    }
+    .searchForAdoctor span, .searchh span {
+      
+        font-size: 12px;
+    }
+}
+.search-nav-mobile .nav.nav-tabs{
+background-color:  rgb(229, 241, 255);
+}
+.search-nav-mobile .nav-link{
+    padding: 16px 0px;
+}
+.search-nav-mobile .Brwose{
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    background-color: rgb(239, 15, 15);
+    padding: 17px 0px;
+}
+.search-nav-mobile .call-num{
+color: #0070cd;
+text-decoration: underline;
+}
+.search-nav-mobile .offcanvas-header{
+    color: white;
+    position: relative;
+    text-align: center;
+    padding: 8.5px;
+    background: rgb(0, 112, 205);
+    width: 100%;
+}
+
+.search-nav-mobile .tab-content{
+    background-color: white;
+}
+.search-nav-mobile .search-in-mobile{
+    position: relative;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 0px, rgb(0 0 0 / 10%) 0px 0px 4px 0px;
+    direction: ltr;
+    font-family: inherit;
+    display: block;
+    color: rgb(111, 112, 114);
+    padding: 16px 16px 16px 36px;
+    border: 3px solid rgb(0, 112, 205);
+    background-color: white;
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 0px 0px 5px 5px !important;
+    margin: 0px !important;
+}
+
+.search-nav .nav-link{
+    color: black;
+}
+.search-nav #nav-profile-tab{
+    border-top-right-radius: 22px;
+}
+.search-nav .nav-link.active{
+   
+    border-top-left-radius:  22px;
+    border: none;
+    border-bottom: #0070cd 4px solid;
+    color: #0070cd;  
+}
+.search-nav-mobile .nav-link.active{
+    background-color: #0070cd;
+    color: white !important;
+}
+.search-nav-mobile .my-search{
+    border: 3px solid rgb(0, 112, 205);
+    border-radius: 0px 0px 6px 6px;
+}
+.search-nav-mobile .my-search button{
+    border-radius: 0px;
+    border-bottom: 1px solid rgb(227, 230, 234);
+}
+.communication{
+    transform: translateY(90%);
+}
+.telephone,.booking{
+    cursor: pointer;
+}
+
+.btn-search{
+    border: none;
+    display: block;
+    color: rgb(111, 112, 114);
+    padding: 16px;
+    background-color: white;
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+}
+
+.telephone.active{
+    color: #0070cd;
+    cursor: pointer;
+    /* border-bottom: #0070cd 4px solid; */
+}
+/* .booking.active{
+    color: white;
+} */
+.searchh{
+    background-color: #ef0f0f ;
+    cursor: pointer;
+}
+.searchForAdoctor div{
+    width: calc(100%/5);
+}
+.speciality{
+    border-top-left-radius:10px !important ;
+    border-bottom-left-radius:10px !important ;
+}
+.searchh{
+    border-top-right-radius:10px !important ;
+    border-bottom-right-radius:10px !important ;
+}
+.searchh span{
+    font-size: 22px;
+    color: white;
+
+}
+.searchForAdoctor div>button{
+    width: 100%;
+}
+.doctorName h5{
+    font-size: 13px;
+}
+.doctorName input{
+    border: none;
+    background-color: inherit;
+    color: #0070cd;
+    font-size: 14px;
+}
+.doctorName input::placeholder{
+    color: #0070cd;
+}
+.doctorName input:focus{
+    outline: none;
+}
+.fa-user-doctor{
+    color: #0070cd;
+}
+.dropdown-item{
+    color: #0070cd !important;
+}
+.booking i, .telephone i{
+    font-size: 30px;
+}
+/* new */
+
+.new h2, .top-offer h2,.book-from-top h2{
+    color: rgb(102, 102, 102);
+    margin-top: 0px;
+    font-size: 2rem;
+    line-height: 28px;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+.new-content{
+    display: flex;
+    background-color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+}
+@media screen and (max-width:600px){
+    .new-content {
+        flex-direction: row-reverse;
+    }
+
+}
+.new-content h3{
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(72, 72, 72);
+}
+.new-content p{
+    margin: 8px 0px;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+}
+.ask{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 160px;
+    height: 40px;
+    background: rgb(230, 241, 255);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(0, 112, 205);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    
+}
+
+.pharm{
+    background-image: url("../../../assets/epharmacy-solution-banner.jpg");
+    padding: 35px 40px;
+    text-decoration: none;
+    background-size: cover;
+    background-position: 100% 0%;
+    display: block;
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    background-color: white;
+    margin: 0;
+}
+.pharm h3{
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: white;
+    font-weight: 700;
+}
+.pharm p{
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: white;
+}
+
+.pharm .place{
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: rgb(0, 112, 205);
+    background-color: rgb(229, 241, 255);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 15%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.pharm .pharm-img{
+    display: none;
+}
+@media screen and (max-width:600px){
+    .pharm .place{
+        width: 100%;
+    }
+
+    .pharm .pharm-img{
+        display: block;
+    }
+
+    .pharm{
+        background-image: unset;
+
+    }
+
+    .pharm h3, .pharm p{
+        color: black;
+    }
+}
+
+.new-two .tele{
+    width: 100%;
+    border-radius: 8px;
+    background: white;
+    /* margin-bottom: 30px; */
+    margin: 0;
+   
+}
+.tele img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.tele div{
+    padding: 0 !important;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.tele .tele-content{
+    padding: 1rem !important;
+    padding-top: 1.5rem !important;
+    color: rgb(102, 102, 102);
+    font-size: 18px;
+    font-weight: 500;
+}
+.tele .tele-content h3{
+    font-weight: 700;
+    display: block;
+    color: rgb(102, 102, 102);
+}
+.tele .tele-content p{
+    margin: 0 !important;
+}
+.tele .tele-content a{
+    color: #0070cd !important;
+    font-weight: 600;
+    cursor: pointer;
+}
+/* top-offer */
+.top-offer {
+    text-align: left !important;
+}
+.top-offer-head a{
+    color: #0070cd !important;
+    font-weight: 600;
+    cursor: pointer;
+}
+.top-offer .off{
+    position: absolute;
+    top: 10px;
+    border-width: 0px 0px 0px 5px;
+    left: 18px;
+    padding: 2px 5px 2px 3px;
+    z-index: 2;
+    height: fit-content;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(224, 32, 32);
+    border-color: rgb(174, 13, 13);
+    border-style: solid;
+}
+.top-offer .carousel-item img{
+    margin-bottom: 5px;
+    border-radius: 10px;
+    width: 100%;
+}
+.top-offer .carousel-control-prev , .book-from-top .carousel-control-prev {
+    left: -60px !important;
+    color: rgb(102, 102, 102) !important;
+    width: unset!important;
+    outline: none;
+    height: 250px;
+
+}
+.top-offer .carousel-control-next, .book-from-top .carousel-control-next{
+    right: -60px !important;
+    color: rgb(102, 102, 102) !important;
+    width: unset!important;
+    outline: none;
+    height: 250px;
+}
+.top-offer .carousel-control-next-icon, .top-offer .carousel-control-prev-icon, 
+.book-from-top .carousel-control-next-icon, .book-from-top .carousel-control-prev-icon  {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(102, 102, 102) !important;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 5px !important;
+}
+.top-offer .carousel-control-next, .top-offer .carousel-control-prev
+.book-from-top .carousel-control-next, .book-from-top .carousel-control-prev{
+    width: unset !important;
+}
+.top-offer h4{
+    text-align: left;
+    background-color: white;
+    font-size: 16px;
+    margin: 0px;
+    color: rgb(102, 102, 102);
+    font-weight: 600;
+}
+.top-offer span{
+    text-align: left !important;
+}
+.top-offer .old-price{
+    color: rgb(185, 185, 185) !important;
+    font-size: 16px;
+    margin-right: 5px;
+    text-decoration: line-through;
+    
+}
+
+.top-offer .offer-price {
+    font-size: 16px;
+    color: #0070cd !important;
+}
+
+.top-offer p{
+    font-size: 14px;
+    text-align: start;
+    margin: 0px;
+    color: rgb(111, 112, 114);
+}
+
+.top-offer .carousel .active:hover{
+    background-color: white;
+    color: white;
+
+}
+/* book from top */
+.book-from-top{
+    background-color: rgb(238, 240, 242);
+}
+.book-from-top .carousel{
+    background-color: rgb(238, 240, 242);
+    border-radius: none;
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    -ms-border-radius: none;
+    -o-border-radius: none;
+    border: none !important;
+}
+.book-from-top .carousel-item img{
+   
+        margin-bottom: 5px;
+        /* border-radius: 10px; */
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        width: 100%;
+    
+}
+.book-from-top .carousel-inner .active{
+    border: none !important;
+}
+.book-from-top .book-slide{
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    background-color: white;
+    
+}
+.book-from-top .book-slide h4{
+    padding: 13px 16px 11px;
+    width: calc(100% - 32px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    background-color: white;
+    margin: -4px 0px 0px;
+    color: rgb(102, 102, 102) !important;
+    border-radius: 0px 0px 8px 8px;
+    font-weight: 700;
+
+}
+.book-from-top .carousel .active:hover{
+    background-color: rgb(238, 240, 242);
+    color: white;
+
+}
+.dawnload-veseeta .top-dawnload img{
+    margin: 18px  15px 15px 0px;
+}
+.dawnload-veseeta h3{
+    font-weight: 700;
+    display: block;
+    color: rgb(102, 102, 102);
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    height: 60px;
+}
+.dawnload-veseeta p{
+    margin: 1rem 0;
+}
+.dawnload-veseeta .contain-dawnload-icon{
+    background-color:#0070cd;
+    color: white;
+    /* height: 338px; */
+    margin-bottom: 40px;
+    border-radius: 8px;
+    /* padding: 0px 106px; */
+    display: flex;
+    /* flex-flow: row-reverse nowrap; */
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  
+    .dawnload-veseeta .contain-dawnload-icon{
+    
+        flex-direction:column-reverse;
+        margin: 0px  !important;
+      
+    }
+}
+.dawnload-veseeta .contain-dawnload-icon .img-dawn{
+    margin-top: 2rem;
+}
+.dawnload-veseeta a{
+    text-decoration: none;
+}
+.dawnload-veseeta .contain-dawnload-icon .dawonload-icon span{
+    color: rgb(102, 102, 102);
+    font-size: .8rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+.dawnload-veseeta .contain-dawnload-icon .dawonload-icon .col-8{
+    padding: 0;
+}
+.dawnload-veseeta .contain-dawnload-icon .dawonload-icon .col-4{
+    text-align: end;
+    padding: 0;
+    padding-right: 5px;
+}
+.dawnload-veseeta .dawonload-icon{
+    background-color: white;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    padding: .8rem !important;
+}
+.dawnload-veseeta .contain-dawnload-icon img{
+    width: 100%;
+  
+}
+/* upper footer */
+.upper-footer{
+    background-color: #eef0f2;
+}
+.upper-footer a{
+    background: white;
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 5px 8px 5px 0px;
+    font-size: 14px !important;
+    color: rgb(111, 112, 114) !important;
+    line-height: 24px;
+}
+.upper-footer a:hover{
+    text-decoration: underline;
+   
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "vezeeta-a2089": {
+      "hosting": {
+        "vezeeta": [
+          "vezeeta-a2089"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "vezeeta-a2089"
+  }
+}

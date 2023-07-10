@@ -1,0 +1,202 @@
+<!-- <<<<<<< HEAD
+<div class="row">
+    <div class="col-md-6 p-4" style="position: relative;">
+      <img src=".\assets\d744fa7f-2531-4e1d-a0e0-4b21a0b7d96e.jpg" alt="Image">
+      <h3 class="thank">{{'Book a home visit' | translate}}</h3>
+      <p class="thankk">{{'Now You can Reserve with a specialist doctor through Vezeeta' | translate}}</p>
+    </div>
+    <div class="col-md-6" >
+      <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" class="mt-5">
+        <div class="form-group row">
+          <label for="firstName" class="col-sm-3 col-form-label">{{'First Name' | translate}}</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" id="firstName" formControlName="firstName" required><br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="lastName" class="col-sm-3 col-form-label">{{'Last Name' | translate}}</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" id="lastName" formControlName="lastName" required><br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-sm-3 col-form-label">{{'Email address' | translate}}</label>
+          <div class="col-sm-7">
+            <input type="email" class="form-control" id="email" formControlName="email" required><br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="phoneNumber" class="col-sm-3 col-form-label">{{'Phone Number' | translate}}</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" required><br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="preferredDate" class="col-sm-3 col-form-label">{{'Preferred Date' | translate}}</label>
+          <div class="col-sm-7">
+            <input type="date" class="form-control" id="preferredDate" formControlName="preferredDate" required><br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="preferredTime" class="col-sm-3 col-form-label">{{'Preferred Time' | translate}}</label>
+          <div class="col-sm-7">
+            <input type="time" class="form-control" id="preferredTime" formControlName="preferredTime" required><br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="medicalSpeciality" class="col-sm-3 col-form-label">{{'Medical Speciality' | translate}}</label>
+          <div class="col-sm-7">
+            <select class="form-control" id="medicalSpeciality" formControlName="medicalSpeciality" required>
+              <option value="">{{'-- Select Medical Speciality --' | translate}}</option>
+              <option value="Dermatology">{{'Dermatology' | translate}}</option>
+              <option value="Cardiology">{{'Cardiology' | translate}}</option>
+              <option value="Endocrinology">{{'Endocrinology' | translate}}</option>
+              <option value="Gastroenterology">{{'Gastroenterology' | translate}}</option>
+              <option value="Neurology">{{'Neurology' | translate}}</option>
+              <option value="Oncology">{{'Oncology' | translate}}</option>
+              <option value="Orthopedics">{{'Orthopedics' | translate}}</option>
+              <option value="Pediatrics">{{'Pediatrics' | translate}}</option>
+              <option value="Psychiatry">{{'Psychiatry' | translate}}</option>
+              <option value="Urology">{{'Urology' | translate}}</option>
+            </select>
+          </div>
+        </div><br>
+        <div class="form-group row">
+            <label for="notes" class="col-sm-3 col-form-label">{{'Reason for Appointment' | translate }}</label>
+            <div class="col-sm-7">
+              <textarea class="form-control" id="notes" rows="4" formControlName="notes"></textarea> <br>
+              <button type="submit" id="btn" class="btn btn-danger">{{'Book Now' | translate}}</button>
+            </div>
+          </div><br>
+
+
+
+
+
+        </form>
+      </div>
+    </div>
+
+
+======= -->
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-6 p-4" id="l" style="position: relative;">
+        <img src=".\assets\d744fa7f-2531-4e1d-a0e0-4b21a0b7d96e.jpg" alt="Image">
+        <h3 class="thank">{{'Book a home visit' | translate}}</h3>
+        <p class="thankk">{{'Now You can Reserve with a specialist doctor through Vezeeta' | translate}}</p>
+      </div>
+      <div class="col-md-6" id="form" [dir]="'dir' | translate">
+        <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" class="mt-5">
+          <div class="form-group row">
+            <label for="firstName" class="col-sm-3 col-form-label">{{'First Name' | translate}}</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="firstName" formControlName="firstName"><br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="lastName" class="col-sm-3 col-form-label">{{'Last Name' | translate}}</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="lastName" formControlName="lastName"><br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">{{'Email address' | translate}}</label>
+            <div class="col-sm-7">
+              <input type="email" class="form-control" id="email" formControlName="email"><br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="phoneNumber" class="col-sm-3 col-form-label">{{'Phone Number' | translate}}</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber"><br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="preferredDate" class="col-sm-3 col-form-label">{{'Preferred Date' | translate}}</label>
+            <div class="col-sm-7">
+              <input type="date" class="form-control" id="preferredDate" formControlName="preferredDate"><br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="preferredTime" class="col-sm-3 col-form-label">{{'Preferred Time' | translate}}</label>
+            <div class="col-sm-7">
+              <input type="time" class="form-control" id="preferredTime" formControlName="preferredTime"><br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="medicalSpeciality" class="col-sm-3 col-form-label">{{'Medical Speciality' | translate}}</label>
+            <div class="col-sm-7">
+              <select class="form-control" id="medicalSpeciality" formControlName="medicalSpeciality">
+                <option value="">{{'-- Select Medical Speciality --' | translate}}</option>
+                <option value="Dermatology">{{'Dermatology' | translate}}</option>
+                <option value="Cardiology">{{'Cardiology' | translate}}</option>
+                <option value="Endocrinology">{{'Endocrinology' | translate}}</option>
+                <option value="Gastroenterology">{{'Gastroenterology' | translate}}</option>
+                <option value="Neurology">{{'Neurology' | translate}}</option>
+                <option value="Oncology">{{'Oncology' | translate}}</option>
+                <option value="Orthopedics">{{'Orthopedics' | translate}}</option>
+                <option value="Pediatrics">{{'Pediatrics' | translate}}</option>
+                <option value="Psychiatry">{{'Psychiatry' | translate}}</option>
+                <option value="Urology">{{'Urology' | translate}}</option>
+              </select>
+            </div>
+          </div><br>
+          <div class="form-group row">
+              <label for="Reason for Appointment" class="col-sm-3 col-form-label">{{'Reason for Appointment' | translate }}</label>
+              <div class="col-sm-7">
+                <textarea class="form-control" id="Reason for Appointment" rows="4" formControlName="Reason for Appointment"></textarea> <br>
+                <button type="submit" id="btn" class="btn btn-danger">{{'Book Now' | translate}}</button>
+              </div>
+            </div><br>
+  
+  
+
+          </form>
+        </div>
+      </div>
+</div>
+
+    <style lang="scss">
+     .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-6 {
+  width: 50%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+form {
+  margin-top: 50px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+#btn {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+#btn:hover {
+  background-color: #fff;
+  border-color: #dc3545;
+  color: #dc3545;
+  cursor: pointer;
+}
+
+
+
+
+    </style>

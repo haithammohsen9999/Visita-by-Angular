@@ -1,0 +1,82 @@
+.doctorimg{
+    width: 70px;
+    height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%;
+}
+.vertical-line {
+    width: 1px;
+    height: 100%;
+    background-color: rgb(201, 201, 201);
+    
+   }
+.col-1{
+    width: 2%;
+}
+.offericon{
+    width: 20px;
+    height: 19px;
+}
+.iconfont{
+    width: max-content;
+    color: rgb(151, 151, 151);
+    font-size: 13px;
+    line-height: 18px;
+}
+.icons{
+    margin: 3px;
+}
+.pricebefore{
+    line-height: 23px;
+    color: rgb(185, 185, 185);
+    font-size: 18px;
+    text-decoration: line-through;
+}
+.price{
+    color: rgb(0, 112, 205);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+    text-align: center;
+}
+.save{
+    color: rgb(0, 213, 99);
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0px 25px;
+}
+.sessionname{
+    padding-top: 5px;
+    color: rgb(47, 47, 47);
+    line-height: 24px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-size: 24px;
+}
+.sessionnum{
+    color: rgb(151, 151, 151);
+    padding: 5px 0px;
+    line-height: 18px;
+    font-size: 14px;
+}
+.priceinfo{
+    font-size: 13px;
+    color: rgb(47, 47, 47);
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.doclocation{
+    color: rgb(151, 151, 151);
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0px;
+}
+.docname{
+    color: rgb(47, 47, 47);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+}

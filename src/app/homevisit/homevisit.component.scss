@@ -1,0 +1,27 @@
+.thank{
+    left: 28%;
+      
+      position:absolute;
+      top: 10%;
+      margin: 0px;
+      color: rgb(255, 255, 255);
+  }
+  .thankk{
+    left: 13%;
+      
+      position:absolute;
+      top: 20%;
+      margin: 0px;
+      color: rgb(255, 255, 255);
+  }
+
+  @media screen and (max-width:900px){
+    #form{
+      width: 100%;
+    }
+    #l{
+      display: none;
+    }
+  }
+
+  

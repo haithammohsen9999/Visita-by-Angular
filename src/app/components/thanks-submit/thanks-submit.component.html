@@ -1,0 +1,46 @@
+<body class="bg-black bg-opacity-10 ">
+  <div class="container mx-auto" id="zz">
+    <div class="row ">
+
+
+      <div class="p-0 bg-white rounded-3 mt-5 mb-5 ">
+
+        <div style="position: relative;"><img
+            src="https://d1aovdz1i2nnak.cloudfront.net/vezeeta-web-reactjs/54079/_next/static/images/thankyou-banner.png"
+            alt="" style="width: 100%;">
+          <p class="thank">Your booking was successfully submitted</p>
+        </div>
+        <div class="notify p-2"><span class="notifyp">We notified Doctor {{doctorName}} of your booking</span></div>
+        <div class="notify p-2"><span class="notifyp">Examination Fees:{{ExaminationFees}}</span></div>
+        <hr>
+        <div class="notify p-2"><span class="notifyp">Clinic number:{{Phone}}</span></div>
+        <div class="notify p-2"><span class="notifyp">Booking details:</span></div>
+        <hr>
+        <div class="notify p-1"><h5 class="notifyp">Patient name {{name}}</h5></div>
+        <div class="px-3">
+          <hr >
+        </div>
+        <div class="notify p-1"><h5 class="notifyp">Booking date      {{ dateSelected }}-{{ timeSelected }}, Appointment reservation</h5></div>
+        <div class="px-3">
+          <hr >
+        </div>
+        <div class="notify p-1"><h5 class="notifyp">Doctor Name {{doctorName}}</h5></div>
+
+        <div class="px-3">
+          <hr >
+        </div>
+        <div class="notify p-1"><h5 class="notifyp">Clinic address {{Location}}</h5></div>
+        <div class="px-3">
+          <hr >
+        </div>
+        <p style="text-align: center;"><button class="btn btn-primary " id="z" routerLink="/myAppointments">My Appointments</button></p>
+
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="x">Thank you for using Vezeeta, We wish you a speedy recovery</p>
+    <p class="x">If you have any inquiry please call 16676</p>
+  </div>
+
+</body>

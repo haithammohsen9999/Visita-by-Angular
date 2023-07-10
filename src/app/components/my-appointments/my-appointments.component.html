@@ -1,0 +1,24 @@
+<div class="mahight">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Doctor</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings$ | async">
+        <td>{{ booking.doctor }}</td>
+        <td>{{ booking.name }}</td>
+        <td>{{ booking.mobile }}</td>
+        <td>{{ booking.email }}</td>
+        <td>{{ booking.dateSelected }}</td>
+        <td>{{ booking.timeSelected }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

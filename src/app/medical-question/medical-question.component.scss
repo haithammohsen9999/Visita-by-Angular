@@ -1,0 +1,63 @@
+
+    #sin {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin: 50px auto;
+        max-width: 800px;
+    }
+    
+    #sin h3 {
+        margin-top: 0;
+    }
+    
+    #sin select {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    #sin label {
+        font-weight: bold;
+    }
+    
+    #sin input[type="text"],
+    #sin textarea {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        margin-bottom: 1rem;
+    }
+    
+    #sin textarea {
+        resize: vertical;
+    }
+    
+    #sin .form-check label {
+        margin-right: 1rem;
+    }
+    
+    #sin button {
+        margin-top: 1rem;
+    }
+    
+    #sin p {
+        font-size: 0.8rem;
+        margin-top: 2rem;
+        color: gray;
+    }
+
+    input[type="radio"]:checked + label {
+        background-color: rgb(233, 241, 241);
+        color: blue;
+
+      }
+      
+
+      
+
+     
+      

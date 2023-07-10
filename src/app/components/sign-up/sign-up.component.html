@@ -1,0 +1,70 @@
+
+<body class="bg-black bg-opacity-10" [dir]="'dir' | translate">
+    <div class="container-sm  ">
+      <div class="row justify-content-center ">
+          <div class="col-md-6 p-0 bg-white rounded-3 mt-5 mb-5">
+              <div style="background-color: #0070cd;" class="rounded-top-3 text-center text-white">{{'Sign Up' | translate}}</div>
+    
+              <div class="btn btn-primary d-flex justify-content-between w-50 mx-auto mt-4 " type="button"><i
+                class="bi bi-facebook border-start-0 border-bottom-0 border-top-0 border pe-3"></i><span
+                class="mx-auto"> {{'Login with Facebook' | translate}}</span></div>
+                <br>
+                <div>
+                  <hr class="position-relative">
+                  <label for="" class="or" id="or">{{'Or' | translate}}</label>
+              </div>
+    
+              <form #f="ngForm" class="p-3">
+                  <div class="form-group">
+                      <label for="name">{{'Name:' | translate}}</label>
+                      <input [(ngModel)]="name" name="name" type="text" class="form-control" id="name" placeholder="{{'Enter your name' | translate}}" required>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                      <label for="mobile">{{'Mobile Number:' | translate}}</label>
+                      <input [(ngModel)]="mobileNumber" name="mobile" type="tel" class="form-control" id="mobile" placeholder="{{'Enter your mobile number' | translate}}" required >
+                  </div>
+                  <br>
+                  <div class="form-group">
+                      <label for="mobile">{{'Email Address:' | translate}}</label>
+                      <input [(ngModel)]="email" name="email" type="tel" class="form-control" id="email" placeholder="example@domain.com" required email >
+                  </div>
+                  <br>
+                  <div class="form-group">
+                      <label>{{'Gender:' | translate}}</label><br>
+                      <div class="form-check form-check-inline">
+                          <input [(ngModel)]="gender" name="male" type="radio" name="gender" id="male" value="male" class="form-check-input" >
+                          <label for="male" class="form-check-label">{{'Male' | translate}}</label>
+                      </div>
+    
+                      <div class="form-check form-check-inline">
+                          <input [(ngModel)]="gender" name="female" type="radio" name="gender" id="female" value="female" class="form-check-input" >
+                          <label for="female" class="form-check-label">{{'Female' | translate}}</label>
+                      </div>
+    
+                  </div>
+                  <br>
+                  <div class="form-group">
+                      <label for="birthdate">{{'Birthdate:' | translate}}</label>
+                      <input [(ngModel)]="birthDate" name="birthdate" type="date" class="form-control" id="birthdate" placeholder="{{'Enter your birthdate' | translate}}" required >
+                  </div>
+                  <br>
+                  <div class="form-group">
+                      <label for="password">{{'Create Password:' | translate}}</label>
+                      <input [(ngModel)]="password" name="password" type="password" class="form-control" id="password" placeholder="{{'Enter your password' | translate}}" required minlength="6">
+                  </div>
+                  <br>
+                  <div style="text-align: center;">
+                  <button style="background-color: red; color: white;"  type="submit" class="btn  mt-2 mb2" [disabled]="f.invalid" (click)="register()">{{'JOIN NOW' | translate}}</button>
+                </div>
+    
+              </form>
+              <div class="w-50 mx-auto ">
+              <hr>
+              <p class="text-muted">{{'Already Registered in Vezeeta ?' | translate}} <span ><a routerLink="/signIn"  >{{'login' | translate}}</a></span></p>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+    
